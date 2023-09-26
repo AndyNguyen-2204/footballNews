@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
   timeout: 5000,
   headers: {
     'x-rapidapi-host': 'v3.football.api-sports.io', 
-    'x-rapidapi-key': '6d2c64573180016255cc3faa74830055',
+    'x-rapidapi-key': '52b1c6870dc5e37a304c58fddff4bd4b',
   },
 });
 

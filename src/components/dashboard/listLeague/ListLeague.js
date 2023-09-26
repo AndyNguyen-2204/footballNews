@@ -20,6 +20,9 @@ export default function MyWallet() {
   };
   const [id, setID] = useState(39)
   const year = new Date().getFullYear()
+  const handleChangeId = (id) => {
+    dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
+  }
   useLayoutEffect(() => {
     dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
   }, [])
@@ -31,7 +34,7 @@ export default function MyWallet() {
       <div className='flex mt-10 max-w-full'>
         <Slider {...settings}>
           {Leagues.map((el) =>
-            <div key={el.id} className='h-full pr w-3/12 cursor-pointer hover:text-primary wrapBorderLeague'>
+            <div key={el.id} onClick={() => handleChangeId(el.id)} className='h-full pr w-3/12 cursor-pointer hover:text-primary wrapBorderLeague'>
               <div className='flex w-full'>
                 <img className='h-20 w-full object-contain' src={el.img} />
               </div>

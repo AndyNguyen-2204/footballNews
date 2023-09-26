@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsGrid1X2 } from "react-icons/bs";
+import { RiTeamLine } from "react-icons/ri";
 export default function Sidebar(props) {
   const Tab = [
     {
@@ -8,8 +9,9 @@ export default function Sidebar(props) {
       icon: <BsGrid1X2 />
     },
     {
-      title: "History",
-      id: "history"
+      title: "Club",
+      id: "club",
+      icon: <RiTeamLine />
     },
   ]
   const handleChageTab = (id) => {
