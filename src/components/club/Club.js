@@ -19,7 +19,7 @@ export default function Club() {
     }
   }
   return (
-    <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-screen'>
+    <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[84vh]'>
       {loading ? <Loading /> : <div className="w-full mt-4">
         <table className="min-w-full bg-white">
           <thead>

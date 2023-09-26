@@ -4,8 +4,10 @@ import { GetDataLeagues } from '../../../redux/getLeagues/GetLeagues';
 import { GetClub } from '../../../redux/getClub/GetClub';
 import { FiRepeat } from "react-icons/fi";
 import InnerHTML from 'dangerously-set-html-content'
+import Loading from '../../loading/Loading'
 export default function InformationLeague({props}) {
   const listClub = useSelector((state) => state.listClubReducer.dataListClub)
+  const loading = useSelector((state) => state.listClubReducer.loading)
   const dispatch = useDispatch()
   const dataLeagues = useSelector((state) => state.leagues.dataLeague)
   const [styleView, setStyleView] = useState("listClub")
@@ -103,8 +105,8 @@ export default function InformationLeague({props}) {
     }
   }, [dataLeagues, styleView])
   return (
-    <div className='bg-white p-6 rounded-md w-full relative mt-5'>
-      {renderData}
+    <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[50vh]'>
+      {loading ? <Loading/> :renderData}
     </div>
   )
 }
