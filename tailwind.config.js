@@ -84,7 +84,7 @@ module.exports = {
         textGray: "#C0C0C0",
         inputbg: "#f4f4f4",
         DDDDDD: "#DDDDDD",
-        888888: "#888888"
+        888888: "#888888",
       },
       fontSize: {
         "s-regular": [

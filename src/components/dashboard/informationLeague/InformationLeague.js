@@ -63,11 +63,11 @@ export default function InformationLeague({props}) {
             <span className='text-xl-medium'>Logo :</span>
             <img src={dataLeagues?.response[0]?.league?.logo} alt="flag" />
           </div>
-          <div className='flex mt-4 justify-end'>
+          {/* <div className='flex mt-4 justify-end'>
             <button onClick={handelChangeView} className='p-2 border rounded border flex items-center gap-2 hover:text-primary'>
               <FiRepeat /> Change view
             </button>
-          </div>
+          </div> */}
           {styleView === "listClub" ? <div className="w-full mt-4">
             <table className="min-w-full bg-white">
               <thead>

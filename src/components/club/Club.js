@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Loading from '../loading/Loading'
 import { GetClub } from '../../redux/getClub/GetClub'
+import Modal from '../modal/Modal'
 
 export default function Club() {
   const dataClub = useSelector((state) => state.club.dataClub)
+  console.log("🚀 ~ file: Club.js:8 ~ Club ~ dataClub:", dataClub)
   const loading = useSelector((state) => state.club.loading)
   const dispatch = useDispatch()
   const year = new Date().getFullYear()
   const [page, setPage] = useState(1)
+  const [showModal, setShowModal] = useState(false)
+  const [dataPlayer, setDataPlayer] = useState(null)
   const handleChangePage = () => {
     if (page === 1) {
       dispatch(GetClub({ url: `/players?league=${dataClub?.parameters?.league}&season=${year}&team=${dataClub?.parameters?.team}&page=${page + 1}` }))
@@ -18,9 +22,14 @@ export default function Club() {
       setPage(1)
     }
   }
+  const handelShow = (item) => {
+    setDataPlayer(item)
+    setShowModal(true)
+    
+  }
   return (
     <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[84vh]'>
-      {loading ? <Loading /> : <div className="w-full mt-4">
+      {loading ? <Loading /> : dataClub ? <div className="w-full mt-4">
         <table className="min-w-full bg-white">
           <thead>
             <tr>
@@ -48,7 +57,7 @@ export default function Club() {
                 <td className="border px-4 py-2">{item.statistics[0].team.name}</td>
                 <td className="border px-4 py-2">{item.statistics[0].games.position}</td>
                 <td className="border px-4 py-2">{`${item.statistics[0].games.captain}`}</td>
-                <td className="border px-4 py-2 text-m-medium hover:text-primary cursor-pointer">View</td>
+                <td onClick={()=>handelShow(item)} className="border px-4 py-2 text-m-medium hover:text-primary cursor-pointer">View</td>
               </tr>
             ))}
           </tbody>
@@ -56,7 +65,10 @@ export default function Club() {
         <button onClick={handleChangePage} className='p-2 mt-3 border rounded hover:text-primary'>
           {page === 1 ? "Next Page" : "Prev Page"}
         </button>
+      </div> : <div className='h-full flex items-center justify-center text-2xl-medium'>
+        <p className=''>Data not found.Please click in club on tab dashboard to get data.Thanks you</p>
       </div>}
+      {showModal && <Modal dataPlayer={dataPlayer} setShowModal={setShowModal}/>}
     </div>
   )
 }
