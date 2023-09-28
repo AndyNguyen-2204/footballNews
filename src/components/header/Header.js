@@ -9,8 +9,7 @@ export default function Header() {
         <img className='h-14' src={Logo} />
       </div>
       <div className="px-5 flex gap-2 box-border py-4 text-center w-8/12 border-x-2 border-inputbg">
-        <div className='relative w-8/12'>
-        </div>
+        <marquee className="text-marquee">Web site about football news made by Andy Nguyen</marquee>
       </div>
       <div class="w-2/12 px-5">
         <div class="flex items-center gap-2">
