@@ -18,13 +18,16 @@ export default function MyWallet() {
     autoplay: true,
     className: "styleslistLeague"
   };
+  const listClub = useSelector((state) => state.listClubReducer.dataListClub)
   const [id, setID] = useState(39)
   const year = new Date().getFullYear()
   const handleChangeId = (id) => {
     dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
   }
   useLayoutEffect(() => {
-    dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
+    if(listClub === null){
+      dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
+    }
   }, [])
   return (
     <div className='bg-white p-6 rounded-md w-full relative'>
