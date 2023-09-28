@@ -10,6 +10,7 @@ export default function InformationLeague({props}) {
   const loading = useSelector((state) => state.listClubReducer.loading)
   const dispatch = useDispatch()
   const dataLeagues = useSelector((state) => state.leagues.dataLeague)
+  console.log("🚀 ~ file: InformationLeague.js:13 ~ InformationLeague ~ dataLeagues:", dataLeagues)
   const [styleView, setStyleView] = useState("listClub")
   const year = new Date().getFullYear()
   const html = `
@@ -56,8 +57,12 @@ export default function InformationLeague({props}) {
         <div>
           <h1 className='text-center text-h4 font-bold'>{dataLeagues?.response[0]?.league?.name}</h1>
           <div className='flex items-center gap-4'>
+            {dataLeagues?.response[0]?.country?.flag && 
+            <>
             <span className='text-xl-medium'>Country :</span>
             <img className='h-24' src={dataLeagues?.response[0]?.country?.flag} alt="flag" />
+            </>
+            }
           </div>
           <div className='flex items-center gap-4 mt-4'>
             <span className='text-xl-medium'>Logo :</span>
