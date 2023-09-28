@@ -18,7 +18,7 @@ export default function Sidebar(props) {
     props.setTabChoosen(id)
   }
   return (
-    <div className='w-2/12 bg-white rounded-b-3xl'>
+    <div className='w-2/12 bg-white rounded-bl-3xl'>
       <span className='block mt-10 text-textGray pl-8 pb-4 text-xl-medium'>MAIN MENU</span>
       <ul>
         {
