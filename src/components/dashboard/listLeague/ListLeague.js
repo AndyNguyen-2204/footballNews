@@ -16,7 +16,28 @@ export default function MyWallet() {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    className: "styleslistLeague"
+    className: "styleslistLeague",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      // Các breakpoint khác nếu bạn muốn xử lý
+    ]
   };
   const listClub = useSelector((state) => state.listClubReducer.dataListClub)
   const [id, setID] = useState(39)

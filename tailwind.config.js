@@ -10,55 +10,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs375: "375px",
-        // => @media (min-width: 375px) { ... }
-        sm450: "450px",
-        // => @media (min-width: 640px) { ... }
-        sm550: "550px",
-        // => @media (min-width: 540px) { ... }
-        sm: "640px",
-        // => @media (min-width: 640px) { ... }
-        md: "768px",
-        // => @media (min-width: 768px) { ... }
-        xl820: "820px",
-        // => @media (min-width: 820px) { ... }
-        lg992: "992px",
-        // => @media (min-width: 820px) { ... }
-        lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-        lg1200: "1200px",
-        // => @media (min-width: 1024px) { ... }
-        lg1150: "1150px",
-        // => @media (min-width: 1150px) { ... }
-        xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
-        xl1440: "1440px",
-        // => @media (min-width: 1440px) { ... }
-        xl1450: "1450px",
-        // => @media (min-width: 1450px) { ... }
-        xl1650: "1650px",
-        // => @media (min-width: 1440px) { ... }
-        "2xl": "1536px",
-        // => @media (min-width: 1536px) { ... }
-        xl1600: "1600px",
-        // => @media (min-width: 1600px) { ... }
-        "3xl": "1920px",
-        // => @media (min-width: 1920px) { ... }
-        xxl: "1921px",
-        // => @media (min-width: 1921px) { ... }
-        desktop: "1025px",
-        // => @media (min-width: 1025px) { ... }
-        tablet: { min: "768px", max: "1024px" },
-        // => @media (min-width: 768px and max-width: 1024px) { ... }
-        mobile: { max: "767px", min: "300px" },
-        // => @media (max-width: 767px) { ... }
-        "md-xl": { min: "768px", max: "1279px" },
-        // => @media (min-width: 768px and max-width: 1279px) { ... }
-        "x-sm": { max: "400px" },
-        "x-sm-600": { max: "600px" },
-        // => @media (max-width: 400px) { ... }
-        "md-lg": { min: "300px", max: "1024px" },
-        "S300-992": { min: "300px", max: "992px" },
+        "x-sc-1600": { min: "1600px" },
+        "x-sc-900": { min: "900px" },
       },
       colors: {
         //background

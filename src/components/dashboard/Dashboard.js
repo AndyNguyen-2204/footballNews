@@ -4,7 +4,7 @@ import InformationLeague from './informationLeague/InformationLeague'
 
 export default function Dashboard(props) {
   return (
-    <div className='p-5 w-10/12'>
+    <div className='x-sc-900:w-10/12 x-sc-900:p-5'>
       <ListLeague/>
       <InformationLeague props={props}/>
     </div>

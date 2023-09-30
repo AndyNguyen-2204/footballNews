@@ -18,12 +18,12 @@ export default function Sidebar(props) {
     props.setTabChoosen(id)
   }
   return (
-    <div className='w-2/12 bg-white rounded-bl-3xl'>
+    <div className='w-full x-sc-900:w-2/12 bg-white rounded-bl-3xl'>
       <span className='block mt-10 text-textGray pl-8 pb-4 text-xl-medium'>MAIN MENU</span>
-      <ul>
+      <ul className='flex x-sc-900:block gap-6'>
         {
           Tab.map((el) =>
-            <li className={`pl-8 py-4 flex items-center border-l-4 border-transparent xl-regular ${props.tabChoosen === el.id && "text-primary border-l-4 !border-primary font-bold"}`} key={el.id} >
+            <li className={`pl-8 py-4 flex items-center border-b-4 x-sc-900:border-l-4 x-sc-900:border-b-0 border-transparent xl-regular ${props.tabChoosen === el.id && "text-primary x-sc-900:border-l-4 !border-primary font-bold"}`} key={el.id} >
               <span className='text-2xl cursor-pointer' onClick={() => handleChageTab(el.id)}>{el.icon}</span>
               <span className='inline-block ml-4 cursor-pointer' onClick={() => handleChageTab(el.id)}>{el.title}</span>
             </li>

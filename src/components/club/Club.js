@@ -6,7 +6,6 @@ import Modal from '../modal/Modal'
 
 export default function Club() {
   const dataClub = useSelector((state) => state.club.dataClub)
-  console.log("🚀 ~ file: Club.js:8 ~ Club ~ dataClub:", dataClub)
   const loading = useSelector((state) => state.club.loading)
   const dispatch = useDispatch()
   const year = new Date().getFullYear()
@@ -29,7 +28,7 @@ export default function Club() {
   }
   return (
     <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[84vh]'>
-      {loading ? <Loading /> : dataClub ? <div className="w-full mt-4">
+      {loading ? <Loading /> : dataClub ? <div className="w-full mt-4 tableInformationLeague">
         <table className="min-w-full bg-white">
           <thead>
             <tr>

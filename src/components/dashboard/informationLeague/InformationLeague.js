@@ -5,12 +5,12 @@ import { GetClub } from '../../../redux/getClub/GetClub';
 import { FiRepeat } from "react-icons/fi";
 import InnerHTML from 'dangerously-set-html-content'
 import Loading from '../../loading/Loading'
+import "./InformationLeague.css"
 export default function InformationLeague({props}) {
   const listClub = useSelector((state) => state.listClubReducer.dataListClub)
   const loading = useSelector((state) => state.listClubReducer.loading)
   const dispatch = useDispatch()
   const dataLeagues = useSelector((state) => state.leagues.dataLeague)
-  console.log("🚀 ~ file: InformationLeague.js:13 ~ InformationLeague ~ dataLeagues:", dataLeagues)
   const [styleView, setStyleView] = useState("listClub")
   const year = new Date().getFullYear()
   const html = `
@@ -56,7 +56,7 @@ export default function InformationLeague({props}) {
       return (
         <div>
           <h1 className='text-center text-h4 font-bold'>{dataLeagues?.response[0]?.league?.name}</h1>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-4 mt-10'>
             {dataLeagues?.response[0]?.country?.flag && 
             <>
             <span className='text-xl-medium'>Country :</span>
@@ -64,7 +64,7 @@ export default function InformationLeague({props}) {
             </>
             }
           </div>
-          <div className='flex items-center gap-4 mt-4'>
+          <div className='flex items-center gap-4 mt-10'>
             <span className='text-xl-medium'>Logo :</span>
             <img src={dataLeagues?.response[0]?.league?.logo} alt="flag" />
           </div>
@@ -73,7 +73,7 @@ export default function InformationLeague({props}) {
               <FiRepeat /> Change view
             </button>
           </div> */}
-          {styleView === "listClub" ? <div className="w-full mt-4">
+          {styleView === "listClub" ? <div className="w-full mt-4 tableInformationLeague">
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
