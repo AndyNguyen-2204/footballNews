@@ -6,6 +6,7 @@ import { FiRepeat } from "react-icons/fi";
 import InnerHTML from 'dangerously-set-html-content'
 import Loading from '../../loading/Loading'
 import "./InformationLeague.css"
+import WidgetComponent from '../widgetComponent/WidgetComponent';
 export default function InformationLeague({props}) {
   const listClub = useSelector((state) => state.listClubReducer.dataListClub)
   const loading = useSelector((state) => state.listClubReducer.loading)
@@ -13,28 +14,6 @@ export default function InformationLeague({props}) {
   const dataLeagues = useSelector((state) => state.leagues.dataLeague)
   const [styleView, setStyleView] = useState("listClub")
   const year = new Date().getFullYear()
-  const html = `
-  <div id="wg-api-football-games"
-  data-host="v3.football.api-sports.io"
-  data-key="52b1c6870dc5e37a304c58fddff4bd4b"
-  data-date=""
-  data-league=${listClub?.parameters?.league}
-  data-season=${year}
-  data-theme=""
-  data-refresh="15"
-  data-show-toolbar="true"
-  data-show-errors="false"
-  data-show-logos="true"
-  data-modal-game="true"
-  data-modal-standings="true"
-  data-modal-show-logos="true">
-</div>
-<script
- type="module"
- src="https://widgets.api-sports.io/2.0.3/widgets.js">
-</script>
-
-  `
   const handelChangeView = () => {
     if (styleView !== "listClub") {
       setStyleView("listClub")
@@ -68,11 +47,11 @@ export default function InformationLeague({props}) {
             <span className='text-xl-medium'>Logo :</span>
             <img src={dataLeagues?.response[0]?.league?.logo} alt="flag" />
           </div>
-          {/* <div className='flex mt-4 justify-end'>
+          <div className='flex mt-4 justify-end'>
             <button onClick={handelChangeView} className='p-2 border rounded border flex items-center gap-2 hover:text-primary'>
               <FiRepeat /> Change view
             </button>
-          </div> */}
+          </div>
           {styleView === "listClub" ? <div className="w-full mt-4 tableInformationLeague">
             <table className="min-w-full bg-white">
               <thead>
@@ -102,7 +81,7 @@ export default function InformationLeague({props}) {
                 ))}
               </tbody>
             </table>
-          </div> : <InnerHTML html={html} />}
+          </div> : <WidgetComponent dataLeague={listClub?.parameters?.league} season={year}/>}
         </div>
       )
     } else {
