@@ -70,7 +70,7 @@ const renderData = useMemo(()=>{
 },[dataLeaguesStandings])
   return (
     <div>
-      <div className='border rounded p-4 mb-4 mt-4'>
+      <div className='border rounded p-4 mb-4 mt-4 max-w-fit float-right'>
         <div className='flex items-center gap-4'><span className='text-a00FF00 text-xl'><AiFillCheckCircle/></span> <span>Win</span></div>
         <div className='flex items-center gap-4 mt-4'><span className='text-gray text-xl'><AiFillMinusCircle/></span> <span>Draw</span></div>
         <div className='flex items-center gap-4 mt-4'><span className='text-red text-xl'><AiFillCloseCircle/></span> <span>Lose</span></div>
