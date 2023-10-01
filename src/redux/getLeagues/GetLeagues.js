@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { get,postFormData } from '../../axios/baseApi'; 
+import { get } from '../../axios/baseApi'; 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,9 +27,9 @@ export const GetDataLeagues = createAsyncThunk(
 );
 export const GetDataLeagueStandings = createAsyncThunk(
   'GetDataLeagueStandings/getLeague',
-  async ({ url, formData }) => {
+  async ({ url, data }) => {
     try {
-      const response = await postFormData(url, formData); // Thay đổi URL tùy theo API của bạn
+      const response = await get(url, data); // Thay đổi URL tùy theo API của bạn
       return response.data;
     } catch (error) {
       throw new Error(error.response.data);

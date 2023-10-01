@@ -7,18 +7,18 @@ import InnerHTML from 'dangerously-set-html-content'
 import Loading from '../../loading/Loading'
 import "./InformationLeague.css"
 import WidgetComponent from '../widgetComponent/WidgetComponent';
-export default function InformationLeague({props}) {
+export default function InformationLeague(props) {
   const listClub = useSelector((state) => state.listClubReducer.dataListClub)
   const loading = useSelector((state) => state.listClubReducer.loading)
   const dispatch = useDispatch()
   const dataLeagues = useSelector((state) => state.leagues.dataLeague)
-  const [styleView, setStyleView] = useState("listClub")
+  const dataLeaguesStandings = useSelector((state) => state.leagues.dataLeagueStandings)
   const year = new Date().getFullYear()
   const handelChangeView = () => {
-    if (styleView !== "listClub") {
-      setStyleView("listClub")
+    if (props.styleView !== "listClub") {
+      props.setStyleView("listClub")
     } else {
-      setStyleView("rank")
+      props.setStyleView("rank")
     }
   }
   const handleGetDataClub = (id) => {
@@ -47,12 +47,12 @@ export default function InformationLeague({props}) {
             <span className='text-xl-medium'>Logo :</span>
             <img src={dataLeagues?.response[0]?.league?.logo} alt="flag" />
           </div>
-          <div className='flex mt-4 justify-end'>
+         {dataLeagues?.response[0]?.country?.name !== "World" &&  <div className='flex mt-4 justify-end'>
             <button onClick={handelChangeView} className='p-2 border rounded border flex items-center gap-2 hover:text-primary'>
               <FiRepeat /> Change view
             </button>
-          </div>
-          {styleView === "listClub" ? <div className="w-full mt-4 tableInformationLeague">
+          </div>}
+          {props.styleView === "listClub" ? <div className="w-full mt-4 tableInformationLeague">
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
@@ -87,7 +87,7 @@ export default function InformationLeague({props}) {
     } else {
       return null
     }
-  }, [dataLeagues, styleView])
+  }, [dataLeagues, props.styleView,dataLeaguesStandings])
   return (
     <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[50vh]'>
       {loading ? <Loading/> :renderData}

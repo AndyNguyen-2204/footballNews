@@ -38,6 +38,7 @@ module.exports = {
         inputbg: "#f4f4f4",
         DDDDDD: "#DDDDDD",
         888888: "#888888",
+        a00FF00:"#00FF00",
       },
       fontSize: {
         "s-regular": [

@@ -1,4 +1,13 @@
 
+@media (max-width:1600px) {
+  .tableInformationLeagueStandings{
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .tableInformationLeagueStandings table{
+      min-width: 1600px;
+  }
+}
 @media (max-width:1100px) {
     .tableInformationLeague{
       max-width: 100%;

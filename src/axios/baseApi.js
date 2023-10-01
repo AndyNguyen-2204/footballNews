@@ -15,7 +15,3 @@ export const get = (url, params = {}) => {
   // Sử dụng các header có sẵn trong axiosInstance
   return axiosInstance.get(url, { params });
 };
-export const postFormData = (url, formData) => {
-  // Sử dụng các header có sẵn trong axiosInstance
-  return axiosInstance.post(url, formData);
-};

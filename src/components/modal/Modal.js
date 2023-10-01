@@ -5,7 +5,6 @@ export default function Modal(props) {
   const handelCloseModal = () => {
     props.setShowModal(false)
   }
-  console.log("🚀 ~ file: Modal.js:4 ~ Modal ~ props:", dataPlayer)
   return (
     <div className='wrap_modal'>
       <div className='backgroundModal'></div>

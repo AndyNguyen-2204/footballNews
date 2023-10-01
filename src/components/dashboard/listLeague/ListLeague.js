@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import { Leagues } from "./FakeData"
 import { GetListClub } from '../../../redux/getListClub/GetListClub';
 import { useDispatch, useSelector } from 'react-redux';
-export default function MyWallet() {
+export default function MyWallet(props) {
   const dispatch = useDispatch()
   const settings = {
     dots: false,
@@ -44,6 +44,7 @@ export default function MyWallet() {
   const year = new Date().getFullYear()
   const handleChangeId = (id) => {
     dispatch(GetListClub({ url: `/teams?league=${id}&season=${year}` }))
+    props.setStyleView("listClub")
   }
   useLayoutEffect(() => {
     if(listClub === null){
