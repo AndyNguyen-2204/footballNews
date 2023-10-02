@@ -23,7 +23,7 @@ export default function InformationLeague(props) {
   }
   const handleGetDataClub = (id) => {
     dispatch(GetClub({url:`/players?league=${listClub?.parameters?.league}&season=${year}&team=${id}`}))
-    props.setTabChoosen("club")
+    props.data.setTabChoosen("club")
   }
   useEffect(() => {
     if (listClub) {
