@@ -18,8 +18,8 @@ export default function Sidebar(props) {
     props.setTabChoosen(id)
   }
   return (
-    <div className='w-full x-sc-900:w-2/12 bg-white rounded-bl-3xl'>
-      <span className='block mt-10 text-textGray pl-8 pb-4 text-xl-medium'>MAIN MENU</span>
+    <div className='w-full x-sc-900:w-2/12 bg-white x-sc-900:rounded-bl-3xl'>
+      <span className='block x-sc-900:mt-10 text-textGray pl-8 pb-4 text-xl-medium'>MAIN MENU</span>
       <ul className='flex x-sc-900:block gap-6'>
         {
           Tab.map((el) =>

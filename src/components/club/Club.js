@@ -27,8 +27,8 @@ export default function Club() {
     
   }
   return (
-    <div className='bg-white p-6 rounded-md w-full relative mt-5 min-h-[84vh]'>
-      {loading ? <Loading /> : dataClub ? <div className="w-full mt-4 tableInformationLeague">
+    <div className='x-sc-900:p-6 rounded-md w-full relative min-h-[84vh]'>
+      {loading ? <Loading /> : dataClub ? <div className="bg-white p-6 w-full tableInformationLeague">
         <table className="min-w-full bg-white">
           <thead>
             <tr>
@@ -64,7 +64,7 @@ export default function Club() {
         <button onClick={handleChangePage} className='p-2 mt-3 border rounded hover:text-primary'>
           {page === 1 ? "Next Page" : "Prev Page"}
         </button>
-      </div> : <div className='h-full flex items-center justify-center text-2xl-medium'>
+      </div> : <div className='x-sc-900:min-h-[50vh] min-h-[80vh] bg-white h-full flex items-center justify-center text-2xl-medium'>
         <p className=''>Data not found.Please click in club on tab dashboard to get data.Thanks you</p>
       </div>}
       {showModal && <Modal dataPlayer={dataPlayer} setShowModal={setShowModal}/>}
