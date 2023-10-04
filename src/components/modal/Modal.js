@@ -36,21 +36,12 @@ export default function Modal(props) {
             <p><span className='text-xl-medium'>Passes :</span> {dataPlayer?.statistics[0].passes.total}</p>
             <p><span className='text-xl-medium'>Passes Accuracy :</span> {dataPlayer?.statistics[0].passes.accuracy}</p>
             <p><span className='text-xl-medium'>Passes Key :</span> {dataPlayer?.statistics[0].passes.key}</p>
-            {dataPlayer?.statistics[0].games.position === "Attacker" ? <>
               <p><span className='text-xl-medium'>Shots :</span> {dataPlayer?.statistics[0].shots.total}</p>
               <p><span className='text-xl-medium'>Goals :</span> {dataPlayer?.statistics[0].goals.total}</p>
               <p><span className='text-xl-medium'>Assists :</span> {dataPlayer?.statistics[0].goals.assists}</p>
-            </> :
-              dataPlayer?.statistics[0].games.position === "Defender" ? <>
                 <p><span className='text-xl-medium'>Duels :</span> {dataPlayer?.statistics[0].duels.total}</p>
                 <p><span className='text-xl-medium'>Duels won :</span> {dataPlayer?.statistics[0].duels.won}</p>
                 <p><span className='text-xl-medium'>Interceptions :</span> {dataPlayer?.statistics[0].tackles.interceptions}</p>
-              </> : <>
-                <p><span className='text-xl-medium'>Duels :</span> {dataPlayer?.statistics[0].duels.total}</p>
-                <p><span className='text-xl-medium'>Duels won :</span> {dataPlayer?.statistics[0].duels.won}</p>
-                <p><span className='text-xl-medium'>Assists :</span> {dataPlayer?.statistics[0].goals.assists}</p>
-              </>
-            }
           </div>
         </div>
 
