@@ -8,7 +8,7 @@ const WidgetComponent = ({dataLeague,season}) => {
     const dispatch =useDispatch()
     const loading = useSelector((state) => state.leagues.loading)
 useEffect(()=>{
-    if(dataLeague && season){
+    if(dataLeague && season && dataLeaguesStandings === null){
         dispatch(GetDataLeagueStandings({ url: `/standings?league=${dataLeague}&season=${season}` }))
     }
 },[])
