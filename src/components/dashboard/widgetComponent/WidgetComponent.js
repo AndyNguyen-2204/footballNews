@@ -9,10 +9,10 @@ const WidgetComponent = ({ dataLeague, season }) => {
   const loading = useSelector((state) => state.leagues.loading)
   const dataLeaguesStandings = useSelector((state) => state.leagues.dataLeagueStandings)
   useEffect(()=>{
-    if(dataLeague && season && dataLeaguesStandings === null){
+    if(dataLeague && season){
         dispatch(GetDataLeagueStandings({ url: `/standings?league=${dataLeague}&season=${season}` }))
     }
-},[dataLeaguesStandings])
+},[])
   const renderData = useMemo(() => {
     if (dataLeaguesStandings) {
       return (
